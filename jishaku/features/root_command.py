@@ -104,28 +104,28 @@ class RootCommand(Feature):
                 )
                 summary.append("")  # blank line
 
-        cache_summary = f"`{len(self.bot.guilds)}` сервера(ов) и `{len(self.bot.users)}` пользователь(ей)"
+        cache_summary = f"{len(self.bot.guilds)} сервера(ов) и {len(self.bot.users)} пользователь(ей)"
 
         # Show shard settings to summary
         if isinstance(self.bot, disnake.AutoShardedClient):
             if len(self.bot.shards) > 20:
                 summary.append(
                     f"Этот бот автоматически разделен на шарды ({len(self.bot.shards)} шарды из {self.bot.shard_count})"
-                    f" и может видеть `{cache_summary}`."
+                    f" и может видеть {cache_summary}."
                 )
             else:
                 shard_ids = ', '.join(str(i) for i in self.bot.shards.keys())
                 summary.append(
                     f"Этот бот автоматически разделен на шарды (Шарды {shard_ids} из {self.bot.shard_count})"
-                    f" и может видеть `{cache_summary}`."
+                    f" и может видеть {cache_summary}."
                 )
         elif self.bot.shard_count:
             summary.append(
                 f"Этот бот разделен на шарды вручную (Шард {self.bot.shard_id} из {self.bot.shard_count})"
-                f" и может видеть `{cache_summary}`."
+                f" и может видеть {cache_summary}."
             )
         else:
-            summary.append(f"Этот бот не разделен на шарды и может видеть `{cache_summary}`.")
+            summary.append(f"Этот бот не разделен на шарды и может видеть {cache_summary}.")
 
         if self.bot._connection.max_messages:
             message_cache = f"Кэш сообщений ограничен (`{self.bot._connection.max_messages}`)"
@@ -136,7 +136,7 @@ class RootCommand(Feature):
             presence_intent = f"Presence интент {'включён' if self.bot.intents.presences else 'выключен'}"
             members_intent = f"members интент {'включён' if self.bot.intents.members else 'выключен'}"
 
-            summary.append(f"{message_cache}\n\n> - {presence_intent}\n> - {members_intent}.\n")
+            summary.append(f"{message_cache}.\n\n> - {presence_intent}\n> - {members_intent}.\n")
         else:
             guild_subscriptions = f"Подписки на сервера {'включены' if self.bot._connection.guild_subscriptions else 'выключены'}"
 
@@ -160,10 +160,10 @@ class RootCommand(Feature):
                     name='Jishaku',
                     url=ctx.bot.user.display_avatar.url,
                     icon_url=ctx.bot.user.display_avatar.url)
-                .set_footer(text=f"Задержка вебсокета в среднем: `{round(self.bot.latency * 1000, 2)}ms`")
+                .set_footer(text=f"Задержка вебсокета в среднем: {round(self.bot.latency * 1000, 2)}ms")
             )
         else:
-            summary.append(f"Задержка вебсокета в среднем: `{round(self.bot.latency * 1000, 2)}ms`")
+            summary.append(f"Задержка вебсокета в среднем: {round(self.bot.latency * 1000, 2)}ms")
             await ctx.send("\n".join(summary))
 
     @Feature.Command(parent="jsk", name="hide")
