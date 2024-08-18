@@ -56,7 +56,7 @@ with open(ROOT / 'README.md', 'r', encoding='utf-8') as f:
 
 
 setup(
-    name='disnake-jishaku-ru',
+    name='disnake-jishaku',
     author='Kraots',
     url='https://github.com/Kraots/jishaku',
 
