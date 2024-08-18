@@ -56,17 +56,17 @@ with open(ROOT / 'README.md', 'r', encoding='utf-8') as f:
 
 
 setup(
-    name='disnake-jishaku',
-    author='Kraots',
-    url='https://github.com/Kraots/jishaku',
+    name='disnake-jishaku-ru',
+    author='darkness800',
+    url='https://github.com/darkness800/disnake-jishaku-ru',
 
     license='MIT',
     description='A disnake extension including useful tools for bot development and debugging.',
     long_description=README,
     long_description_content_type='text/markdown',
     project_urls={
-        'Code': 'https://github.com/Kraots/jishaku',
-        'Issue tracker': 'https://github.com/Kraots/jishaku/issues'
+        'Code': 'https://github.com/darkness800/disnake-jishaku-ru',
+        'Issue tracker': 'https://github.com/darkness800/disnake-jishaku-ru/issues'
     },
 
     version=VERSION,
@@ -77,7 +77,7 @@ setup(
 
     extras_require=EXTRA_REQUIRES,
 
-    download_url='https://github.com/Kraots/jishaku/archive/{}.tar.gz'.format(VERSION),
+    download_url='https://github.com/darkness800/disnake-jishaku-ru/archive/{}.tar.gz'.format(VERSION),
 
     keywords='jishaku disnake disnake-jishaku discord cog repl extension',
     classifiers=[
