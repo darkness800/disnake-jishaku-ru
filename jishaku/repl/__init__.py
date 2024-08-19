@@ -1,15 +1,5 @@
 # -*- coding: utf-8 -*-
-
-"""
-jishaku.repl
-~~~~~~~~~~~~
-
-Repl-related operations and tools for Jishaku.
-
-:copyright: (c) 2021 Devon (Gorialis) R
-:license: MIT, see LICENSE for more details.
-
-"""
+# SPDX-License-Identifier: MIT
 
 from jishaku.repl.compilation import *  # noqa: F401
 from jishaku.repl.disassembly import disassemble  # noqa: F401
