@@ -1,14 +1,11 @@
 # -*- coding: utf-8 -*-
+# SPDX-License-Identifier: MIT
 
 """
 jishaku.paginators
-~~~~~~~~~~~~~~~~~~
+~~~~~~~
 
-Paginator-related tools and interfaces for Jishaku.
-
-:copyright: (c) 2021 Devon (Gorialis) R
-:license: MIT, see LICENSE for more details.
-
+Base Feature class for all feature components.
 """
 
 from disnake.ext import commands
