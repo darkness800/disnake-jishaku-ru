@@ -1,15 +1,5 @@
 # -*- coding: utf-8 -*-
-
-"""
-jishaku.repl.disassembly
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-Functions pertaining to the disassembly of Python code
-
-:copyright: (c) 2021 Devon (Gorialis) R
-:license: MIT, see LICENSE for more details.
-
-"""
+# SPDX-License-Identifier: MIT
 
 import ast
 import dis
