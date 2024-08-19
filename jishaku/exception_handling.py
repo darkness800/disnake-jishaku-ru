@@ -1,15 +1,5 @@
 # -*- coding: utf-8 -*-
-
-"""
-jishaku.exception_handling
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Functions and classes for handling exceptions.
-
-:copyright: (c) 2021 Devon (Gorialis) R
-:license: MIT, see LICENSE for more details.
-
-"""
+# SPDX-License-Identifier: MIT
 
 import asyncio
 import subprocess
