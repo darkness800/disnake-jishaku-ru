@@ -1,14 +1,11 @@
 # -*- coding: utf-8 -*-
+# SPDX-License-Identifier: MIT
 
 """
 jishaku.shell
-~~~~~~~~~~~~~
+~~~~~~~
 
-Tools related to interacting directly with the shell.
-
-:copyright: (c) 2021 Devon (Gorialis) R
-:license: MIT, see LICENSE for more details.
-
+Base Feature class for all feature components.
 """
 
 import asyncio
