@@ -1,15 +1,5 @@
 # -*- coding: utf-8 -*-
-
-"""
-jishaku.repl.repl_builtins
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Builtin functions and variables within Jishaku REPL contexts.
-
-:copyright: (c) 2021 Devon (Gorialis) R
-:license: MIT, see LICENSE for more details.
-
-"""
+# SPDX-License-Identifier: MIT
 
 import aiohttp
 import disnake
