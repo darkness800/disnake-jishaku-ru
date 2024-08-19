@@ -1,15 +1,5 @@
 # -*- coding: utf-8 -*-
-
-"""
-jishaku.repl.compilation
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-Constants, functions and classes related to classifying, compiling and executing Python code.
-
-:copyright: (c) 2021 Devon (Gorialis) R
-:license: MIT, see LICENSE for more details.
-
-"""
+# SPDX-License-Identifier: MIT
 
 import ast
 import asyncio
