@@ -1,13 +1,6 @@
 # -*- coding: utf-8 -*-
 # SPDX-License-Identifier: MIT
 
-"""
-jishaku.paginators
-~~~~~~~
-
-Base Feature class for all feature components.
-"""
-
 from disnake.ext import commands
 
 from jishaku.flags import Flags
