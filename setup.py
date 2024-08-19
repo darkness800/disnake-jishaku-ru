@@ -50,9 +50,7 @@ setup(
 
     extras_require=EXTRA_REQUIRES,
 
- #   download_url='https://github.com/darkness800/disnake-jishaku-ru/archive/{}.tar.gz'.format(VERSION),
-
-    keywords='jishaku disnake disnake-jishaku discord cog repl extension',
+    keywords='jishaku disnake disnake-jishaku-ru discord cog repl extension ru-fork',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Framework :: AsyncIO',
