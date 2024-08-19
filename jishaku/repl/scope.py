@@ -1,15 +1,5 @@
 # -*- coding: utf-8 -*-
-
-"""
-jishaku.repl.scope
-~~~~~~~~~~~~~~~~~~
-
-The Scope class and functions relating to it.
-
-:copyright: (c) 2021 Devon (Gorialis) R
-:license: MIT, see LICENSE for more details.
-
-"""
+# SPDX-License-Identifier: MIT
 
 import inspect
 import typing
