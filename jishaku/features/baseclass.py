@@ -1,15 +1,5 @@
 # -*- coding: utf-8 -*-
-
-"""
-jishaku.features.baseclass
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The base Feature class that serves as the superclass of all feature components.
-
-:copyright: (c) 2021 Devon (Gorialis) R
-:license: MIT, see LICENSE for more details.
-
-"""
+# SPDX-License-Identifier: MIT
 
 import asyncio
 import collections
