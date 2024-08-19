@@ -141,8 +141,8 @@ class ManagementFeature(Feature):
         # This gives us 5 visible readings, because a request can't include the stats for itself.
         for _ in range(6):
             # First generate the text
-            text = "Calculating round-trip time...\n\n"
-            text += "\n".join(f"Reading {index + 1}: {reading * 1000:.2f}ms" for index, reading in enumerate(api_readings))
+            text = "Расчет времени в пути туда и обратно...\n\n"
+            text += "\n".join(f"Чтение {index + 1}: {reading * 1000:.2f}ms" for index, reading in enumerate(api_readings))
 
             if api_readings:
                 average = sum(api_readings) / len(api_readings)
@@ -152,16 +152,16 @@ class ManagementFeature(Feature):
                 else:
                     stddev = 0.0
 
-                text += f"\n\nAverage: {average * 1000:.2f} \N{PLUS-MINUS SIGN} {stddev * 1000:.2f}ms"
+                text += f"\n\nСреднее: {average * 1000:.2f} \N{PLUS-MINUS SIGN} {stddev * 1000:.2f}ms"
             else:
-                text += "\n\nNo readings yet."
+                text += "\n\nПоказаний пока нет."
 
             if websocket_readings:
                 average = sum(websocket_readings) / len(websocket_readings)
 
-                text += f"\nWebsocket latency: {average * 1000:.2f}ms"
+                text += f"\nЗадержка вебсокета: {average * 1000:.2f}ms"
             else:
-                text += f"\nWebsocket latency: {self.bot.latency * 1000:.2f}ms"
+                text += f"\nЗадержка вебсокета: {self.bot.latency * 1000:.2f}ms"
 
             # Now do the actual request and reading
             if message:
