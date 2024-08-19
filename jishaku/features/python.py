@@ -1,15 +1,5 @@
 # -*- coding: utf-8 -*-
-
-"""
-jishaku.features.python
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-The jishaku Python evaluation/execution commands.
-
-:copyright: (c) 2021 Devon (Gorialis) R
-:license: MIT, see LICENSE for more details.
-
-"""
+# SPDX-License-Identifier: MIT
 
 import io
 import os
