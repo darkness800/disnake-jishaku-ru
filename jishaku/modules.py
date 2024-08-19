@@ -1,13 +1,6 @@
 # -*- coding: utf-8 -*-
 # SPDX-License-Identifier: MIT
 
-"""
-jishaku.modules
-~~~~~~~
-
-Base Feature class for all feature components.
-"""
-
 import pathlib
 import typing
 
