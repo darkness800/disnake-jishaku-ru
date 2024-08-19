@@ -1,15 +1,5 @@
 # -*- coding: utf-8 -*-
-
-"""
-jishaku.features.youtube
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The jishaku youtube-dl command.
-
-:copyright: (c) 2021 Devon (Gorialis) R
-:license: MIT, see LICENSE for more details.
-
-"""
+# SPDX-License-Identifier: MIT
 
 import disnake
 import youtube_dl
