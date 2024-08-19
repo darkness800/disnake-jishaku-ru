@@ -1,15 +1,5 @@
 # -*- coding: utf-8 -*-
-
-"""
-jishaku.cog
-~~~~~~~~~~~~
-
-The Jishaku debugging and diagnostics cog implementation.
-
-:copyright: (c) 2021 Devon (Gorialis) R
-:license: MIT, see LICENSE for more details.
-
-"""
+# SPDX-License-Identifier: MIT
 
 from disnake.ext import commands
 
