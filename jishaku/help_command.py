@@ -1,15 +1,5 @@
 # -*- coding: utf-8 -*-
-
-"""
-jishaku.help_command
-~~~~~~~~~~~~~~~~~~~~
-
-HelpCommand subclasses with jishaku features
-
-:copyright: (c) 2021 Devon (Gorialis) R
-:license: MIT, see LICENSE for more details.
-
-"""
+# SPDX-License-Identifier: MIT
 
 from disnake.ext import commands
 
