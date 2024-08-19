@@ -1,13 +1,6 @@
 # -*- coding: utf-8 -*-
 # SPDX-License-Identifier: MIT
 
-"""
-jishaku.shell
-~~~~~~~
-
-Base Feature class for all feature components.
-"""
-
 import asyncio
 import os
 import pathlib
