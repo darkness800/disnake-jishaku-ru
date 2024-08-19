@@ -1,15 +1,5 @@
 # -*- coding: utf-8 -*-
-
-"""
-jishaku.features.invocation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The jishaku command invocation related commands.
-
-:copyright: (c) 2021 Devon (Gorialis) R
-:license: MIT, see LICENSE for more details.
-
-"""
+# SPDX-License-Identifier: MIT
 
 import contextlib
 import inspect
