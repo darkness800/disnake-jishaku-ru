@@ -1,15 +1,5 @@
 # -*- coding: utf-8 -*-
-
-"""
-jishaku.meta
-~~~~~~~~~~~~
-
-Meta information about jishaku.
-
-:copyright: (c) 2021 Devon (Gorialis) R
-:license: MIT, see LICENSE for more details.
-
-"""
+# SPDX-License-Identifier: MIT
 
 from collections import namedtuple
 
@@ -29,8 +19,8 @@ __all__ = (
 VersionInfo = namedtuple('VersionInfo', 'major minor micro releaselevel serial')
 version_info = VersionInfo(major=2, minor=6, micro=5, releaselevel='final', serial=0)
 
-__author__ = 'Gorialis, Kraots'
-__copyright__ = 'Copyright 2021 Devon (Gorialis) R'
+__author__ = 'Darkness800'
+__copyright__ = 'Copyright 2021 Devon (Gorialis) R, Copyright (c) 2024 MayaTeam'
 __docformat__ = 'restructuredtext en'
 __license__ = 'MIT'
 __title__ = 'jishaku'
