@@ -92,7 +92,7 @@ class ManagementFeature(Feature):
 
         ellipse_character = "\N{BRAILLE PATTERN DOTS-356}" if Flags.USE_BRAILLE_J else "\N{HORIZONTAL ELLIPSIS}"
 
-        await ctx.send(f"Logging out now{ellipse_character}")
+        await ctx.send(f"Выход из системы...{ellipse_character}")
         await ctx.bot.close()
 
     @Feature.Command(parent="jsk", name="invite")
@@ -108,7 +108,7 @@ class ManagementFeature(Feature):
 
         for perm in perms:
             if perm not in dict(permissions):
-                raise commands.BadArgument(f"Invalid permission: {perm}")
+                raise commands.BadArgument(f"Недопустимое разрешение: {perm}")
 
             setattr(permissions, perm, True)
 
@@ -121,7 +121,7 @@ class ManagementFeature(Feature):
         }
 
         return await ctx.send(
-            f"Link to invite this bot:\n<https://discordapp.com/oauth2/authorize?{urlencode(query, safe='+')}>"
+            f"Ссылка на добавление бота:\n<https://discordapp.com/oauth2/authorize?{urlencode(query, safe='+')}>"
         )
 
     @Feature.Command(parent="jsk", name="rtt", aliases=["ping"])
@@ -180,3 +180,79 @@ class ManagementFeature(Feature):
             # Ignore websocket latencies that are 0 or negative because they usually mean we've got bad heartbeats
             if self.bot.latency > 0.0:
                 websocket_readings.append(self.bot.latency)
+
+
+
+    @Feature.Command(parent="jsk", name="help", aliases=["commands"])
+    async def jsk_help(self, ctx: disnake.ApplicationCommandInteraction):
+        """
+        Sends an embed with a list of all commands in the jsk category.
+        """
+        
+        embed = disnake.Embed(title="Команды Jishaku", description="Список доступных команд")
+
+        commands_info = {
+            "cancel": "Отменяет задачу с указанным индексом.",
+            "cat": "Читает файл, используя подсветку синтаксиса.",
+            "curl": "Скачивает и отображает текстовый файл из интернета.",
+            "debug": "Запускает команду, измеряя время выполнения.",
+            "dis": "Дизассемблирует код Python в байт-код.",
+            "git": "Сокращение для 'jsk sh git'. Вызывает системную оболочку.",
+            "hide": "Скрывает Jishaku из команды help.",
+            "invite": "Получает URL-адрес приглашения для этого бота.",
+            "load": "Загружает или перезагружает указанные имена расширений.",
+            "override": "Запускает команду от имени другого пользователя, канала или потока, с до... ",
+            "permtrace": "Вычисляет источник предоставленных или отклоненных разрешений.",
+            "pip": "Сокращение для 'jsk sh pip'. Вызывает системную оболочку.",
+            "py": "Прямая оценка кода Python.",
+            "py_inspect": "Оценка кода Python с информацией о проверке.",
+            "repeat": "Запускает команду несколько раз подряд.",
+            "retain": "Включает или отключает сохранение переменных для REPL.",
+            "rtt": "Вычисляет время двусторонней передачи данных до API.",
+            "shell": "Выполняет команды в системной оболочке.",
+            "show": "Показывает Jishaku в команде help.",
+            "shutdown": "Выводит этого бота из системы.",
+            "source": "Отображает исходный код для команды.",
+            "tasks": "Показывает запущенные задачи jishaku.",
+            "unload": "Отключает указанные имена расширений.",
+            "voice": "Команды, связанные с голосом.",
+        }
+
+        page1_commands = list(commands_info.items())[:len(commands_info) // 2]
+        page2_commands = list(commands_info.items())[len(commands_info) // 2:]
+
+        for command, description in page1_commands:
+            embed.add_field(name=command, value=description, inline=False)
+
+        button_page1 = disnake.ui.Button(label="1 Страница", style=disnake.ButtonStyle.secondary)
+        button_page2 = disnake.ui.Button(label="2 Страница", style=disnake.ButtonStyle.secondary)
+
+        view = disnake.ui.View()
+        view.add_item(button_page1)
+        view.add_item(button_page2)
+
+        message = await ctx.send(embed=embed, view=view)
+
+        async def button_page1_callback(interaction: disnake.Interaction):
+            if interaction.user != ctx.author:
+                await interaction.response.send_message("Это не ваша кнопка!", ephemeral=True)
+                return 
+
+            embed = disnake.Embed(title="Команды Jishaku", description="Список доступных команд")
+            for command, description in page1_commands:
+                embed.add_field(name=command, value=description, inline=False)
+            await interaction.response.edit_message(embed=embed, view=view)
+
+        async def button_page2_callback(interaction: disnake.Interaction):
+            if interaction.user != ctx.author:
+                await interaction.response.send_message("Это не ваша кнопка!", ephemeral=True)
+                return
+
+            embed = disnake.Embed(title="Команды Jishaku", description="Список доступных команд")
+            for command, description in page2_commands:
+                embed.add_field(name=command, value=description, inline=False)
+            await interaction.response.edit_message(embed=embed, view=view)
+
+        button_page1.callback = button_page1_callback
+        button_page2.callback = button_page2_callback
+

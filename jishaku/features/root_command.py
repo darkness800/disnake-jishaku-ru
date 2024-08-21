@@ -54,7 +54,7 @@ class RootCommand(Feature):
         """
 
         summary = [
-            f"disnake-jishaku v{package_version('disnake-jishaku')}, "
+            f"disnake-jishaku-ru v{package_version('disnake-jishaku-ru')} Beta, "
             f"disnake `{package_version('disnake')}`, "
 
             f"`Python {sys.version}` на `{sys.platform}`".replace("\n", ""),
@@ -73,7 +73,7 @@ class RootCommand(Feature):
                         mem = proc.memory_full_info()
                         summary.append(f"Используя {natural_size(mem.rss)} физической памяти и "
                                        f"{natural_size(mem.vms)} виртуальной памяти, "
-                                       f"{natural_size(mem.uss)} {natural_size(mem.uss)} из которых уникальны для этого процесса.")
+                                       f"{natural_size(mem.uss)} из которых уникальны для этого процесса.")
                     except psutil.AccessDenied:
                         pass
 
