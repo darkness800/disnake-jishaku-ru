@@ -1,11 +1,12 @@
 LICENSE
 README.md
+setup.cfg
 setup.py
-disnake_jishaku.egg-info/PKG-INFO
-disnake_jishaku.egg-info/SOURCES.txt
-disnake_jishaku.egg-info/dependency_links.txt
-disnake_jishaku.egg-info/requires.txt
-disnake_jishaku.egg-info/top_level.txt
+disnake_jishaku_ru.egg-info/PKG-INFO
+disnake_jishaku_ru.egg-info/SOURCES.txt
+disnake_jishaku_ru.egg-info/dependency_links.txt
+disnake_jishaku_ru.egg-info/requires.txt
+disnake_jishaku_ru.egg-info/top_level.txt
 jishaku/__init__.py
 jishaku/__main__.py
 jishaku/codeblocks.py
@@ -40,7 +41,3 @@ jishaku/repl/scope.py
 jishaku/repl/walkers.py
 jishaku/shim/paginator_200.py
 jishaku/shim/paginator_base.py
-requirements/_.txt
-requirements/procinfo.txt
-requirements/test.txt
-requirements/voice.txt
