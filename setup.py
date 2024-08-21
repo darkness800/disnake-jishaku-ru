@@ -19,14 +19,13 @@ for feature in (ROOT / 'requirements').glob('*.txt'):
     with open(feature, 'r', encoding='utf-8') as f:
         EXTRA_REQUIRES[feature.with_suffix('').name] = f.read().splitlines()
 
-REQUIREMENTS = EXTRA_REQUIRES.pop('_')
+REQUIREMENTS = EXTRA_REQUIRES.pop('_', [])
 
 if not VERSION:
     raise RuntimeError('version is not set')
 
 with open(ROOT / 'README.md', 'r', encoding='utf-8') as f:
     README = f.read()
-
 
 setup(
     name='disnake-jishaku-ru',

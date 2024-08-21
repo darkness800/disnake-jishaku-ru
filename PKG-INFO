@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
-Name: disnake-jishaku-ru
-Version: 1.4.6
+Name: ru-disnake-jishaku
+Version: 1.5.0
 Summary: A disnake extension including useful tools for bot development and debugging.
 Author: dakness.py, maya-dev
 Author-email: darkness@maya-ai.online
@@ -23,14 +23,7 @@ To install the library, use pip:
 pip install -U disnake-jishaku-ru
 ```
 
-Or from github repository
-```bash
-pip install -U https://github.com/darkness800/disnake-jishaku-ru
-```
-
 ## Usage
-
-### Sync API
 
 ```python
 bot.load_extension('jishaku')
@@ -46,7 +39,6 @@ This project is licensed under the MIT License.
 ```
 MIT License
 
-Copyright (c) 2021 Devon (Gorialis) R
 Copyright (c) 2024 MayaTeam
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
