@@ -151,7 +151,7 @@ class PaginatorInterface(ui.View):
         self.button_current.label = str(self.display_page + 1)
         self.button_next.label = self.emojis.forward
         self.button_last.label = f"{self.emojis.end} \u200b {self.page_count}"
-        self.button_close.label = f"{self.emojis.close} \u200b Close paginator"
+        self.button_close.label = f"{self.emojis.close} \u200b Закрыть пагинатор"
 
     async def add_line(self, *args, **kwargs):
         """
@@ -288,7 +288,7 @@ class PaginatorInterface(ui.View):
         self.update_view()
         await interaction.response.edit_message(**self.send_kwargs)
 
-    @ui.button(label="\N{BLACK SQUARE FOR STOP} \u200b Close paginator", style=disnake.ButtonStyle.danger)
+    @ui.button(label="\N{BLACK SQUARE FOR STOP} \u200b Закрыть пагинатор", style=disnake.ButtonStyle.danger)
     async def button_close(self, button: ui.Button, interaction: disnake.Interaction):
         """Button to close the interface"""
 
