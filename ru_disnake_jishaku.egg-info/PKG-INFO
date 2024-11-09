@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: ru-disnake-jishaku
+Version: 1.5.5
+Summary: Расширение Disnake, включая полезные инструменты для разработки и отладки ботов.
+Home-page: https://github.com/darkness800/disnake-jishaku-ru
+Author: darkness800
+License: MIT
+Project-URL: Code, https://github.com/darkness800/disnake-jishaku-ru
+Project-URL: Issue tracker, https://github.com/darkness800/disnake-jishaku-ru/issues
+Keywords: jishaku disnake disnake-jishaku-ru discord cog repl extension ru-fork
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Framework :: AsyncIO
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: Russian
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Communications :: Chat
+Classifier: Topic :: Internet
+Classifier: Topic :: Software Development :: Debuggers
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: Utilities
+Requires-Python: >=3.8.0
+Description-Content-Type: text/markdown
+Provides-Extra: procinfo
+Provides-Extra: test
+Provides-Extra: voice
+License-File: LICENSE
+
+# disnake-jishaku-ru
+Русифицированный форк библиотеки "disnake-jishaku".
+
+Скачать в консоли:
+```bash
+pip install -U disnake-jishaku-ru
+```
+
+Документация:
+https://jishaku.readthedocs.io/en/latest/
+
+
