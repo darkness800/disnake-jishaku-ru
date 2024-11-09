@@ -20,20 +20,20 @@ from jishaku.paginators import WrappedPaginator
 
 class ManagementFeature(Feature):
     """
-    Функция, содержащая команды управления расширением и бота
+    Feature containing the extension and bot control commands
     """
 
     @Feature.Command(parent="jsk", name="load", aliases=["reload"])
     async def jsk_load(self, ctx: commands.Context, *extensions: ExtensionConverter):
         """
-        Загружает или перезагружает заданные имена расширения.
+        Loads or reloads the given extension names.
 
-        Сообщает о любых расширениях, которые не загружались.
+        Reports any extensions that failed to load.
         """
 
         paginator = WrappedPaginator(prefix='', suffix='')
 
-        # 'JSK RELOAD' Сама только что перезагружает Джишаку
+        # 'jsk reload' on its own just reloads jishaku
         if ctx.invoked_with == 'reload' and not extensions:
             extensions = [['jishaku']]
 
@@ -62,9 +62,9 @@ class ManagementFeature(Feature):
     @Feature.Command(parent="jsk", name="unload")
     async def jsk_unload(self, ctx: commands.Context, *extensions: ExtensionConverter):
         """
-        Выгружает заданные имена расширения.
+        Unloads the given extension names.
 
-        Сообщает о любых расширениях, которые не разгрузили.
+        Reports any extensions that failed to unload.
         """
 
         paginator = WrappedPaginator(prefix='', suffix='')
@@ -89,7 +89,7 @@ class ManagementFeature(Feature):
     @Feature.Command(parent="jsk", name="shutdown", aliases=["logout"])
     async def jsk_shutdown(self, ctx: commands.Context):
         """
-        вырубает этого бот.
+        Logs this bot out.
         """
 
         ellipse_character = "\N{BRAILLE PATTERN DOTS-356}" if Flags.USE_BRAILLE_J else "\N{HORIZONTAL ELLIPSIS}"
@@ -100,7 +100,7 @@ class ManagementFeature(Feature):
     @Feature.Command(parent="jsk", name="restart", aliases=["reboot"])
     async def jsk_reboot(self, ctx: commands.Context):
         """
-        перезагрузить.
+        reboot.
         """
 
         ellipse_character = "\N{BRAILLE PATTERN DOTS-356}" if Flags.USE_BRAILLE_J else "\N{HORIZONTAL ELLIPSIS}"
@@ -113,9 +113,9 @@ class ManagementFeature(Feature):
     @Feature.Command(parent="jsk", name="invite")
     async def jsk_invite(self, ctx: commands.Context, *perms: str):
         """
-        Получить URL приглашения для этого бота.
+        Retrieve the invite URL for this bot.
 
-        Если имена разрешений предоставляются, они запрашиваются как часть приглашения.
+        If the names of permissions are provided, they are requested as part of the invite.
         """
 
         scopes = ('bot', 'applications.commands')
@@ -142,20 +142,20 @@ class ManagementFeature(Feature):
     @Feature.Command(parent="jsk", name="rtt", aliases=["ping"])
     async def jsk_rtt(self, ctx: commands.Context):
         """
-        Рассчитывает время запроса к API.
+        Calculates Round-Trip Time to the API.
         """
 
         message = None
 
-        # Мы покажем каждое из этих показаний, а также среднее и стандартное отклонение.
+        # We'll show each of these readings as well as an average and standard deviation.
         api_readings = []
-        # Мы также записываем показания WebSocket, но мы предоставим только среднее значение.
+        # We'll also record websocket readings, but we'll only provide the average.
         websocket_readings = []
 
-        # Мы делаем 6 итераций здесь.
-        # Это дает нам 5 видимых показаний, потому что запрос не может включать статистику для себя.
+        # We do 6 iterations here.
+        # This gives us 5 visible readings, because a request can't include the stats for itself.
         for _ in range(6):
-            # Сначала генерируйте текст
+            # First generate the text
             text = "Расчет времени в пути туда и обратно...\n\n"
             text += "\n".join(f"Чтение {index + 1}: {reading * 1000:.2f}ms" for index, reading in enumerate(api_readings))
 
@@ -178,7 +178,7 @@ class ManagementFeature(Feature):
             else:
                 text += f"\nЗадержка вебсокета: {self.bot.latency * 1000:.2f}ms"
 
-            # Теперь сделайте фактический запрос и чтение
+            # Now do the actual request and reading
             if message:
                 before = time.perf_counter()
                 await message.edit(content=text)
@@ -192,14 +192,14 @@ class ManagementFeature(Feature):
 
                 api_readings.append(after - before)
 
-            # Игнорируйте задержки WebSocket, которые 0 или негативны, потому что они обычно означают, что у нас плохое сердцебиение
+            # Ignore websocket latencies that are 0 or negative because they usually mean we've got bad heartbeats
             if self.bot.latency > 0.0:
                 websocket_readings.append(self.bot.latency)
 
     @Feature.Command(parent="jsk", name="help", aliases=["commands"])
     async def jsk_help(self, ctx: disnake.ApplicationCommandInteraction):
         """
-        Список доступных команд jishaku
+        Список доступных команд в категории jsk.
         """
 
         commands_info = {
@@ -236,7 +236,7 @@ class ManagementFeature(Feature):
 
         is_embedded = os.environ.get('JISHAKU_EMBEDDED_JSK', 'false').lower() == 'true'
         
-        current_page = 1  
+        current_page = 1  # Текущая страница
 
         if is_embedded:
             embed = disnake.Embed(title="Команды | 1 Страница", description="Список доступных команд")
@@ -268,7 +268,7 @@ class ManagementFeature(Feature):
                 commands_to_display = page2_commands
 
             if is_embedded:
-                embed.title = f"Команды | {current_page} Страница" 
+                embed.title = f"Команды | {current_page} Страница"  # Обновляем заголовок
                 embed.clear_fields()
                 for command, description in commands_to_display:
                     embed.add_field(name=command, value=description, inline=False)
