@@ -8,7 +8,6 @@ License: MIT
 Project-URL: Code, https://github.com/darkness800/disnake-jishaku-ru
 Project-URL: Issue tracker, https://github.com/darkness800/disnake-jishaku-ru/issues
 Keywords: jishaku disnake disnake-jishaku-ru discord cog repl extension ru-fork
-Platform: UNKNOWN
 Classifier: Development Status :: 5 - Production/Stable
 Classifier: Framework :: AsyncIO
 Classifier: Intended Audience :: Developers
@@ -25,22 +24,66 @@ Classifier: Topic :: Software Development :: Testing
 Classifier: Topic :: Utilities
 Requires-Python: >=3.8.0
 Description-Content-Type: text/markdown
-Provides-Extra: docs
-Provides-Extra: procinfo
-Provides-Extra: publish
-Provides-Extra: test
-Provides-Extra: voice
 License-File: LICENSE
+Requires-Dist: braceexpand>=0.1.7
+Requires-Dist: click>=8.0.1
+Requires-Dist: import_expression<2.0.0,>=1.0.0
+Provides-Extra: publish
+Requires-Dist: Jinja2; extra == "publish"
+Provides-Extra: test
+Requires-Dist: click; extra == "test"
+Requires-Dist: coverage; extra == "test"
+Requires-Dist: flake8; extra == "test"
+Requires-Dist: isort; extra == "test"
+Requires-Dist: pylint; extra == "test"
+Requires-Dist: pytest; extra == "test"
+Requires-Dist: pytest-cov; extra == "test"
+Requires-Dist: pytest-mock; extra == "test"
+Provides-Extra: procinfo
+Requires-Dist: psutil; extra == "procinfo"
+Provides-Extra: docs
+Requires-Dist: sphinx>=3.5.4; extra == "docs"
+Requires-Dist: sphinxcontrib-asyncio; extra == "docs"
+Provides-Extra: voice
+Requires-Dist: yt-dlp; extra == "voice"
 
-# disnake-jishaku-ru
-Русифицированный форк библиотеки "disnake-jishaku".
+# Джишаку - Руссифицированный Форк
 
-Скачать в консоли:
-```bash
-pip install -U disnake-jishaku-ru
-```
+Добро пожаловать в русскоязычную версию расширения **disnake-jishaku** для разработчиков Discord-ботов! Этот проект создан для того, чтобы сделать разработку ботов проще и доступнее для русскоязычного сообщества.
 
-Документация:
-https://jishaku.readthedocs.io/en/latest/
+## Описание
 
+**jishaku** — это расширение для разработчиков ботов, которое позволяет быстро создавать прототипы, экспериментировать и отлаживать функции ботов. 
 
+## Установка
+Одна из основных философий jishaku — быть динамичным и простым в использовании. Вот двухэтапная установка: 
+
+1. Загрузите джишаку из командной строки с помощью pip:
+   ```bash
+   pip install -U disnake-jishaku-ru
+   ```
+
+2. Загрузите расширение в код вашего бота перед его запуском:
+   ```bash
+   bot.load_extension('jishaku')
+   ```
+
+## Документация
+
+Для более подробной информации о функции и использовании **jishaku**, пожалуйста, обратитесь к [документации](https://mayaais-organization.gitbook.io/dobro-pozhalovat).
+
+## Участие
+
+Мы приветствуем любой вклад в развитие проекта! Если у вас есть идеи, предложения или вы хотите помочь с развитием, пожалуйста, создайте [issue](https://github.com/darkness800/disnake-jishaku-ru/issues) или отправьте pull request.
+
+## Лицензия
+
+Данный проект распространяется под лицензией MIT. Пожалуйста, ознакомьтесь с файлом `LICENSE` для получения дополнительной информации.
+
+## Контакты
+
+Если у вас есть вопросы или предложения, вы можете связаться со мной:
+
+- Discord: darkness.py
+
+Удачи!

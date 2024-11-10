@@ -47,3 +47,13 @@ requirements/docs.txt
 requirements/procinfo.txt
 requirements/test.txt
 requirements/voice.txt
+tests/test_cog.py
+tests/test_converter.py
+tests/test_executorfunc.py
+tests/test_hljs.py
+tests/test_inspections.py
+tests/test_model.py
+tests/test_paginator.py
+tests/test_repl.py
+tests/test_shell.py
+tests/test_subclassing.py
