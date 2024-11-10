@@ -47,7 +47,7 @@ Requires-Dist: sphinxcontrib-asyncio; extra == "docs"
 Provides-Extra: voice
 Requires-Dist: yt-dlp; extra == "voice"
 
-# Джишаку - Руссифицированный Форк
+# disnake-jishaku-ru - Руссифицированный Форк
 
 Добро пожаловать в русскоязычную версию расширения **disnake-jishaku** для разработчиков Discord-ботов! Этот проект создан для того, чтобы сделать разработку ботов проще и доступнее для русскоязычного сообщества.
 
